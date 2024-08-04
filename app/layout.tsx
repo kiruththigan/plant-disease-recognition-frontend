@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald, Exo_2 } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header/header";
+import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
+const exo2 = Exo_2({ subsets: ["latin"], variable: "--font-exo2" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} ${oswald.variable} ${exo2.variable} dark:text-[#37FBB3]`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
