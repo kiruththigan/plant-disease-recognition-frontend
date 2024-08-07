@@ -9,6 +9,7 @@ import FindDiseaseButton from "./FindDiseaseButton";
 const FileUploader: React.FC = () => {
   const file = useImageStore((state) => state.file);
   const setFile = useImageStore((state) => state.setFile);
+  const disease = useImageStore((state) => state.disease);
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -29,6 +30,7 @@ const FileUploader: React.FC = () => {
 
   return (
     <div className="space-y-8">
+      <div className="text-center text-xl font-bold">{disease}</div>
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         {file ? (
