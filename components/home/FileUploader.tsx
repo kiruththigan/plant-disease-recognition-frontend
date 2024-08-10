@@ -19,6 +19,7 @@ const FileUploader: React.FC = () => {
     accept: {
       "image/jpeg": [],
       "image/png": [],
+      "image/webp": [],
     },
   });
 
