@@ -1,5 +1,5 @@
 "use client";
-import { CloudUpload, Edit, Trash2 } from "lucide-react";
+import { Camera, CloudUpload, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -9,6 +9,8 @@ import FindDiseaseButton from "./FindDiseaseButton";
 const FileUploader: React.FC = () => {
   const file = useImageStore((state) => state.file);
   const setFile = useImageStore((state) => state.setFile);
+  const isCameraOpen = useImageStore((state) => state.isCameraOpen);
+  const setIsCameraOpen = useImageStore((state) => state.setIsCameraOpen);
   const disease = useImageStore((state) => state.disease);
 
   const [isHovered, setIsHovered] = useState(false);
@@ -51,11 +53,17 @@ const FileUploader: React.FC = () => {
             {isHovered && (
               <div className="absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center gap-10 bg-[#00000088] rounded-lg">
                 <Edit
-                  onClick={open}
+                  onClick={() => {
+                    setIsCameraOpen(false);
+                    open();
+                  }}
                   className="size-8 md:size-[50px] cursor-pointer hover:scale-110 "
                 />
                 <Trash2
-                  onClick={() => setFile("")}
+                  onClick={() => {
+                    setFile("");
+                    setIsCameraOpen(false);
+                  }}
                   className="size-8 md:size-[50px] cursor-pointer hover:scale-110 "
                 />
               </div>
@@ -75,8 +83,6 @@ const FileUploader: React.FC = () => {
           </div>
         )}
       </div>
-
-      <FindDiseaseButton />
     </div>
   );
 };

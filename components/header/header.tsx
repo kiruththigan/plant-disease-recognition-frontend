@@ -6,18 +6,16 @@ import { ModeToggle } from "@/components/header/theme-mode-toggler";
 
 const Header: React.FC = () => {
   return (
-    <nav>
+    <nav className="w-full">
       <div
         className="
         flex 
         justify-between 
         items-center 
         py-2 
-        fixed 
-        top-0 
         h-[60px]
         inset-x-0 
-        z-10 md:px-10 lg:px-20 
+        z-10
         border-b 
         border-slate-200 
         dark:border-[#27272A]  
