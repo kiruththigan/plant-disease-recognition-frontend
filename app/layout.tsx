@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} ${oswald.variable} ${exo2.variable} dark:text-[#37FBB3]`}
+        className={`${inter.className} ${oswald.variable} ${exo2.variable} dark:text-[#37FBB3] `}
       >
         <ThemeProvider
           attribute="class"
@@ -30,9 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
+          <div className="min-h-screen flex flex-col justify-between items-center">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

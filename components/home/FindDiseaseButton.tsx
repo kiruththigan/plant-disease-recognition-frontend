@@ -50,7 +50,7 @@ const FindDiseaseButton: React.FC = () => {
         <Button
           className="bg-[#37FBB3] hover:bg-[#2ac78e] mx-auto space-x-2"
           onClick={handleDisease}
-          disabled={isLoadingDisease || disease ? true : false}
+          disabled={!file || isLoadingDisease || disease ? true : false}
         >
           {isLoadingDisease && <Loader2 className="animate-spin size-5" />}
           <div>Find Disease</div>
