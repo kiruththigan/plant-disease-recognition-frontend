@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import SiteLogo from "@/components/header/site-logo";
 import { ModeToggle } from "@/components/header/theme-mode-toggler";
+import LanguageSelect from "./language-select";
 
 const Header: React.FC = () => {
   return (
@@ -30,6 +31,7 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-6">
+            <LanguageSelect />
             {/* <ModeToggle /> */}
             {/* user profile */}
           </div>

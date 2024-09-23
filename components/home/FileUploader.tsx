@@ -5,8 +5,10 @@ import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useImageStore } from "@/stores/image.store";
 import FindDiseaseButton from "./FindDiseaseButton";
+import { useTranslations } from "next-intl";
 
 const FileUploader: React.FC = () => {
+  const t = useTranslations("FileUploader");
   const file = useImageStore((state) => state.file);
   const setFile = useImageStore((state) => state.setFile);
   const isCameraOpen = useImageStore((state) => state.isCameraOpen);
@@ -78,7 +80,7 @@ const FileUploader: React.FC = () => {
               <CloudUpload className=" size-10 md:size-20" />
             </div>
             <div className="font-exo2 text-2xl text-center">
-              Click or drag image to this area to upload image.
+              {t("description")}
             </div>
           </div>
         )}
