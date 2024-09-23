@@ -4,8 +4,10 @@ import { Button } from "../ui/button";
 import { useImageStore } from "@/stores/image.store";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const FindDiseaseButton: React.FC = () => {
+  const t = useTranslations("FindDisease");
   const file = useImageStore((state) => state.file);
   const isLoadingDisease = useImageStore((state) => state.isLoadingDisease);
   const setIsLoadingDisease = useImageStore(
@@ -53,7 +55,7 @@ const FindDiseaseButton: React.FC = () => {
           disabled={!file || isLoadingDisease || disease ? true : false}
         >
           {isLoadingDisease && <Loader2 className="animate-spin size-5" />}
-          <div>Find Disease</div>
+          <div>{t("find_disease")}</div>
         </Button>
       )}
     </div>

@@ -1,6 +1,7 @@
 'use client'
 import { useImageStore } from "@/stores/image.store";
 import { CameraIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 import Webcam from "react-webcam";
 
@@ -11,6 +12,7 @@ const videoConstraints = {
 };
 
 const Camera = () => {
+  const t=useTranslations("Camera")
   const isCameraOpen = useImageStore((state) => state.isCameraOpen);
   const setIsCameraOpen = useImageStore((state) => state.setIsCameraOpen);
 
@@ -44,7 +46,7 @@ const Camera = () => {
             }}
           >
             <CameraIcon />
-            <div>Use camera</div>
+            <div>{t("use_camera")}</div>
           </div>
         </div>
       )}
@@ -68,7 +70,7 @@ const Camera = () => {
                   onClick={capture}
                 >
                   <CameraIcon />
-                  <div>Capture</div>
+                  <div>{t("capture")}</div>
                 </div>
               </div>
             </div>

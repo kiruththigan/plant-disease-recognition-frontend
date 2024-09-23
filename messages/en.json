@@ -1,0 +1,22 @@
+{
+  "System": {
+    "title": "Plant Disease Recognition System"
+  },
+  "Languages": {
+    "title": "Languages",
+    "place_holder": "Select a language",
+    "english": "English",
+    "tamil": "Tamil",
+    "sinhala": "Sinhala"
+  },
+  "FileUploader": {
+    "description": "Click or drag and drop image to this area to upload image."
+  },
+  "Camera": {
+    "use_camera": "Use camera",
+    "capture": "Capture"
+  },
+  "FindDisease": {
+    "find_disease": "Find Disease"
+  }
+}
