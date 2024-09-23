@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useImageStore } from "@/stores/image.store";
 import { CameraIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -12,9 +12,9 @@ const videoConstraints = {
 };
 
 const Camera = () => {
-  const t=useTranslations("Camera")
+  const t = useTranslations("Camera");
   const isCameraOpen = useImageStore((state) => state.isCameraOpen);
-  const setIsCameraOpen = useImageStore((state) => state.setIsCameraOpen);
+  const openCamera = useImageStore((state) => state.openCamera);
 
   const webcamRef = React.useRef<Webcam>(null);
   const file = useImageStore((state) => state.file);
@@ -22,18 +22,22 @@ const Camera = () => {
 
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef?.current?.getScreenshot();
-    const file = dataURLtoFile(imageSrc, 'webcam-image.jpg');
+    const file = dataURLtoFile(imageSrc, "webcam-image.jpg");
     setFile(file);
   }, [webcamRef, setFile]);
 
-  function dataURLtoFile(dataurl:any, filename:string) {
-    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+  function dataURLtoFile(dataurl: any, filename: string) {
+    var arr = dataurl.split(","),
+      mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]),
+      n = bstr.length,
+      u8arr = new Uint8Array(n);
     while (n--) {
-        u8arr[n] = bstr.charCodeAt(n);
+      u8arr[n] = bstr.charCodeAt(n);
     }
     return new File([u8arr], filename, { type: mime });
-}
+  }
+
   return (
     <div>
       {(!isCameraOpen || file) && (
@@ -41,7 +45,7 @@ const Camera = () => {
           <div
             className="flex justify-center items-center gap-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
             onClick={() => {
-              setIsCameraOpen(true);
+              openCamera();
               setFile("");
             }}
           >
