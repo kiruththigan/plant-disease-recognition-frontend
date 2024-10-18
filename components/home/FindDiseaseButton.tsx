@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { Button } from "../ui/button";
 import { useImageStore } from "@/stores/image.store";
-import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -22,19 +21,16 @@ const FindDiseaseButton: React.FC = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/predict`;
+      const res = await fetch("/api/find-disease", {
+        method: "POST",
+        body: formData,
+      });
 
-      const header = {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "multipart/form-data",
-        },
-      };
+      const data = await res.json();
 
-      const result = await axios.post(url, formData, header);
-      setDisease(result?.data?.prediction);
-
-      console.log("result : ", result?.data?.prediction);
+      if (data?.success) {
+        setDisease(data?.data?.prediction);
+      }
     } catch (e: any) {
       console.log("Error while predict disease ", e);
     } finally {

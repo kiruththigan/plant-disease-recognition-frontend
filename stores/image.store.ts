@@ -9,6 +9,8 @@ interface ImageStore {
   setDisease: (disease: string) => void;
   isCameraOpen: boolean;
   setIsCameraOpen: (isOpen: boolean) => void;
+  openCamera: () => void;
+  closeCamera: () => void;
 }
 
 export const useImageStore = create<ImageStore>()((set) => ({
@@ -20,4 +22,6 @@ export const useImageStore = create<ImageStore>()((set) => ({
   setDisease: (disease) => set({ disease: disease }),
   isCameraOpen: false,
   setIsCameraOpen: (isOpen) => set({ isCameraOpen: isOpen }),
+  openCamera: () => set({ isCameraOpen: true }),
+  closeCamera: () => set({ isCameraOpen: false }),
 }));
