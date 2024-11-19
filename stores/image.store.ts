@@ -11,6 +11,12 @@ interface ImageStore {
   setIsCameraOpen: (isOpen: boolean) => void;
   openCamera: () => void;
   closeCamera: () => void;
+
+  isHovered: boolean;
+  setIsHovered: (isHovered: boolean) => void;
+
+  solution: PlantDiseaseSolutionType | null;
+  setSolution: (solution: PlantDiseaseSolutionType | null) => void;
 }
 
 export const useImageStore = create<ImageStore>()((set) => ({
@@ -24,4 +30,10 @@ export const useImageStore = create<ImageStore>()((set) => ({
   setIsCameraOpen: (isOpen) => set({ isCameraOpen: isOpen }),
   openCamera: () => set({ isCameraOpen: true }),
   closeCamera: () => set({ isCameraOpen: false }),
+
+  isHovered: false,
+  setIsHovered: (isHovered) => set({ isHovered: isHovered }),
+
+  solution: null,
+  setSolution: (solution) => set({ solution: solution }),
 }));

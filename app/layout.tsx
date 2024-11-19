@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
@@ -35,9 +36,12 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-screen flex flex-col justify-between items-center">
+            <div className="min-h-screen flex flex-col justify-between items-center relative">
               <Header />
-              {children}
+              <div className="container">
+                {children}
+                <Toaster position="top-right" richColors />
+              </div>
               <Footer />
             </div>
           </NextIntlClientProvider>

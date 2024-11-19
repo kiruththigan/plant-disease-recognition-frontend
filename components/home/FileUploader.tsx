@@ -12,8 +12,8 @@ const FileUploader: React.FC = () => {
   const setFile = useImageStore((state) => state.setFile);
   const closeCamera = useImageStore((state) => state.closeCamera);
   const disease = useImageStore((state) => state.disease);
-
-  const [isHovered, setIsHovered] = useState(false);
+  const isHovered = useImageStore((state) => state.isHovered);
+  const setIsHovered = useImageStore((state) => state.setIsHovered);
 
   const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
     noClick: true,

@@ -1,5 +1,8 @@
 import axios from "axios";
 import { NextResponse, type NextRequest } from "next/server";
+import { Prisma, PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export async function POST(request: NextRequest) {
   const body = await request.formData();
@@ -19,8 +22,27 @@ export async function POST(request: NextRequest) {
 
   try {
     const response = await axios.post(url, formData, header);
-    
-    return NextResponse.json({ success: true, data: response.data });
+
+    const solution = await prisma.plantDisease.findFirst({
+      where: {
+        disease: {
+          equals: response?.data?.prediction,
+          mode: Prisma.QueryMode.insensitive,
+        },
+      },
+      select: {
+        disease: true,
+        en: true,
+        ta: true,
+        sh: true,
+      },
+    });
+
+    return NextResponse.json({
+      success: true,
+      data: response?.data,
+      solution: solution,
+    });
   } catch (error) {
     console.log("Error in updating wallet", error);
     return NextResponse.json({ success: false });
