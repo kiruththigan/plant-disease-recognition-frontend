@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
+import socialImage from "/public//assets/social.png";
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
@@ -35,13 +36,13 @@ export const metadata: Metadata = {
     siteName: "Plant Disease Recognition System.",
     images: [
       {
-        url: "/assets/social.png",
+        url: socialImage.src,
         width: 800,
         height: 600,
         alt: "Plant Disease Recognition System",
       },
       {
-        url: "/assets/social.png",
+        url: socialImage.src,
         width: 1800,
         height: 1600,
         alt: "Plant Disease Recognition System",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     title: "Plant Disease Recognition System",
     description:
       "Identify plant diseases quickly and get expert treatment advice.",
-    images: ["/assets/social.png"],
+    images: [socialImage.src],
   },
 };
 
