@@ -8,9 +8,11 @@ const Solution = () => {
   return (
     <>
       {solution?.[locale] && (
-        <div className="lg:mt-14">
-          <div className="text-xl font-medium">Solution</div>
-          <div className="text-white text-md">{solution?.[locale]}</div>
+        <div className="lg:mt-14 max-w-[500px]">
+          <div className="text-xl font-medium">Direct Control</div>
+          <div className="text-white text-md whitespace-pre-wrap">
+            {solution?.[locale]}
+          </div>
         </div>
       )}
     </>
