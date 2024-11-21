@@ -7,7 +7,9 @@ import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
-import socialImage from "/public/assets/social.png";
+
+// "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW" //social 610kb
+// "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1" //social 800kb
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
@@ -36,13 +38,13 @@ export const metadata: Metadata = {
     siteName: "Plant Disease Recognition System.",
     images: [
       {
-        url: socialImage.src,
+        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
         width: 800,
         height: 600,
         alt: "Plant Disease Recognition System",
       },
       {
-        url: socialImage.src,
+        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
         width: 1800,
         height: 1600,
         alt: "Plant Disease Recognition System",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     title: "Plant Disease Recognition System",
     description:
       "Identify plant diseases quickly and get expert treatment advice.",
-    images: [socialImage.src],
+    images: ["https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1"],
   },
 };
 
