@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     siteName: "Plant Disease Recognition System.",
     images: [
       {
-        url: "/assets/social.webp",
+        url: "/assets/social.png",
         width: 800,
         height: 600,
         alt: "Plant Disease Recognition System",
       },
       {
-        url: "/assets/social.webp",
+        url: "/assets/social.png",
         width: 1800,
         height: 1600,
         alt: "Plant Disease Recognition System",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Plant Disease Recognition System",
     description:
       "Identify plant diseases quickly and get expert treatment advice.",
-    images: ["/assets/social.webp"],
+    images: ["/assets/social.png"],
   },
 };
 
