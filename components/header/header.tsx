@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteLogo from "@/components/header/site-logo";
 import { ModeToggle } from "@/components/header/theme-mode-toggler";
 import LanguageSelect from "./language-select";
+import ProfileDropdown from "./ProfileDropdown";
 
 const Header: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const Header: React.FC = () => {
             <LanguageSelect />
             {/* <ModeToggle /> */}
             {/* user profile */}
+            <ProfileDropdown />
           </div>
         </div>
       </div>

@@ -4,18 +4,28 @@ import FileUploader from "./FileUploader";
 import FindDiseaseButton from "./FindDiseaseButton";
 import { useImageStore } from "@/stores/image.store";
 import Camera from "./Camera";
+import Solution from "./Solution";
 
 const DiseaseFindWidget = () => {
   const isCameraOpen = useImageStore((state) => state.isCameraOpen);
   const file = useImageStore((state) => state.file);
 
   return (
-    <div className="space-y-8">
-      {(!isCameraOpen || file) && <FileUploader />}
+    <div className="flex flex-col lg:flex-row justify-start items-start gap-5">
+      <div className="space-y-8">
+        {(!isCameraOpen || file) && <FileUploader />}
 
-      <Camera />
+        <div className="flex lg:hidden">
+          <Solution />
+        </div>
 
-      <FindDiseaseButton />
+        <Camera />
+
+        <FindDiseaseButton />
+      </div>
+      <div className="hidden lg:flex">
+        <Solution />
+      </div>
     </div>
   );
 };

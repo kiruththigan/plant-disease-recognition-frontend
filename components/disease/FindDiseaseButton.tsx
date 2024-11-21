@@ -14,6 +14,7 @@ const FindDiseaseButton: React.FC = () => {
   );
   const disease = useImageStore((state) => state.disease);
   const setDisease = useImageStore((state) => state.setDisease);
+  const setSolution = useImageStore((state) => state.setSolution);
 
   const handleDisease = async () => {
     setIsLoadingDisease(true);
@@ -30,6 +31,7 @@ const FindDiseaseButton: React.FC = () => {
 
       if (data?.success) {
         setDisease(data?.data?.prediction);
+        setSolution(data?.solution);
       }
     } catch (e: any) {
       console.log("Error while predict disease ", e);
@@ -40,6 +42,7 @@ const FindDiseaseButton: React.FC = () => {
 
   useEffect(() => {
     setDisease("");
+    setSolution(null);
   }, [file]);
 
   return (
