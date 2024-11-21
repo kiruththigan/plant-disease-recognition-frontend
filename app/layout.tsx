@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
-import socialImage from "/public//assets/social.png";
+import socialImage from "/public/assets/social.png";
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
