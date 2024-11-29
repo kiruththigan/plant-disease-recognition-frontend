@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const tableDataSchema = z.object({
-  id: z.string(),
+  id: z.number(),
   disease: z.string(),
   en: z.string(),
   ta: z.string(),

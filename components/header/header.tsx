@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             <div className="flex ml-4 space-x-4">{/* nav menu */}</div>
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
             <LanguageSelect />
             {/* <ModeToggle /> */}
             {/* user profile */}
