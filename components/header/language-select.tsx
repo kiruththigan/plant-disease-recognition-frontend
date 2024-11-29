@@ -31,7 +31,7 @@ const LanguageSelect: React.FC = () => {
     <div>
       <Select defaultValue={locale} onValueChange={onChange}>
         <SelectTrigger
-          className={`border-0 focus-visible:ring-transparent flex flex-row justify-center items-center gap-1 ${
+          className={`border-0 focus-visible:ring-transparent outline-none flex flex-row justify-center items-center gap-1 ${
             isPending && "pointer-events-none hidden"
           } `}
         >
