@@ -83,7 +83,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-screen flex flex-col justify-between items-center relative">
               <Header />
-              <div className="container">
+              <div className="md:container">
                 {children}
                 <Toaster position="top-right" richColors />
               </div>

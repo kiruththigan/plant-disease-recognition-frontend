@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useImageStore } from "@/stores/image.store";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 const FileUploader: React.FC = () => {
   const t = useTranslations("FileUploader");
@@ -22,6 +23,11 @@ const FileUploader: React.FC = () => {
       "image/jpeg": [],
       "image/png": [],
       "image/webp": [],
+    },
+    onDropRejected(fileRejections, event) {
+      toast.error(fileRejections[0].errors[0].code, {
+        description: fileRejections[0].errors[0].message,
+      });
     },
   });
 
