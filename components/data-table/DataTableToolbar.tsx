@@ -1,8 +1,6 @@
 "use client";
 import { Table } from "@tanstack/react-table";
-import { X } from "lucide-react";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
 import { DataTableViewOptions } from "./DataTableViewOptions";
 import DiseaseModal from "../admin/DiseaseModal";
 import { useDiseaseTableStore } from "@/stores/table.store";

@@ -1,3 +1,4 @@
+"use client";
 import TableSection from "@/components/admin/TableSection";
 import React from "react";
 

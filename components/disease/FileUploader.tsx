@@ -1,7 +1,7 @@
 "use client";
 import { CloudUpload, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useImageStore } from "@/stores/image.store";
 import { useTranslations } from "next-intl";
