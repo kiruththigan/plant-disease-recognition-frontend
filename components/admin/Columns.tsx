@@ -3,7 +3,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "../data-table/DataTableColumnHeader";
 import { TableDataSchema } from "../data-table/schema";
-import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import Actions from "./Actions";
 

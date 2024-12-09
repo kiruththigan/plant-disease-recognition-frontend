@@ -1,3 +1,4 @@
+"use client";
 import { useImageStore } from "@/stores/image.store";
 import { useLocale } from "next-intl";
 import React from "react";

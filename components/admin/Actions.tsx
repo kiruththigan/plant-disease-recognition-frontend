@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Eye, PenLine, Trash2 } from "lucide-react";
+import { Eye, PenLine } from "lucide-react";
 import { useModalStore } from "@/stores/modal.store";
 import DeleteConfirmationModal from "./DeleteConfirmationModal";
 
