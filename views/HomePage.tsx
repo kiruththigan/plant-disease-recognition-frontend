@@ -17,6 +17,9 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import leaf from "/public/assets/leaf-1.webp";
+import chili from "/public/assets/chili-1.png";
+import brinjal from "/public/assets/brinjal-1.png";
 
 export default function HomePage() {
   const [activeStep, setActiveStep] = useState(1);
@@ -43,7 +46,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-transparent text-gray-100 mb-40 2xl:relative">
       <div className="hidden md:block 2xl:hidden absolute top-0 right-0 z-[-1] blur-[1px]">
         <Image
-          src={"/assets/leaf-1.webp"}
+          src={leaf}
           alt="bg"
           width={0}
           height={0}
@@ -54,7 +57,7 @@ export default function HomePage() {
       
       <div className="absolute top-96 2xl:top-24 left-32 2xl:-left-32 z-[-1] blur-[2px] transform md:rotate-45">
         <Image
-          src={"/assets/chili-1.png"}
+          src={chili}
           alt="bg"
           width={0}
           height={0}
@@ -65,7 +68,7 @@ export default function HomePage() {
 
       <div className="absolute bottom-[1200px] sm:bottom-[900px] 2xl:bottom-44 right-32 2xl:-right-28 z-[-1] blur-[1px] transform rotate-[315deg]">
         <Image
-          src={"/assets/brinjal-1.png"}
+          src={brinjal}
           alt="bg"
           width={0}
           height={0}
@@ -76,7 +79,7 @@ export default function HomePage() {
 
       <div className="hidden md:block 2xl:hidden absolute bottom-80 left-0 z-[-1] blur-[1px] transform rotate-180">
         <Image
-          src={"/assets/leaf-1.webp"}
+          src={leaf}
           alt="bg"
           width={0}
           height={0}
