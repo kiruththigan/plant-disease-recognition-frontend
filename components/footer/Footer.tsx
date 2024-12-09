@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 import {
-  Sprout,
   Facebook,
   Twitter,
   Instagram,
@@ -15,11 +14,10 @@ import logo from "/public/assets/logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className={`w-full mt-40`}>
+    <div className={`w-full`}>
       <footer className="bg-gray-900 text-white py-12 ">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Logo and Description */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
                 <Image
@@ -68,18 +66,17 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="#">About Us</FooterLink>
-                <FooterLink href="#">Our Services</FooterLink>
-                <FooterLink href="#">Contact</FooterLink>
+                <FooterLink href="/disease">Find Disease</FooterLink>
+                <FooterLink href="/about">About Us</FooterLink>
+                <FooterLink href="/services">Our Services</FooterLink>
+                <FooterLink href="/contact">Contact</FooterLink>
               </ul>
             </div>
 
-            {/* Contact Info */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
               <address className="not-italic text-sm text-gray-400">

@@ -70,7 +70,7 @@ export default function SigninPage() {
   }
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center my-40">
       <Card className="w-[350px]">
         <CardHeader>
           <CardTitle>Sign In</CardTitle>
