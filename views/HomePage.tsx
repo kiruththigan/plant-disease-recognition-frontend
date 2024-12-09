@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function HomePage() {
   const [activeStep, setActiveStep] = useState(1);
@@ -43,7 +44,52 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020817] text-gray-100">
+    <div className="min-h-screen bg-transparent text-gray-100 mb-40 2xl:relative">
+      <div className="hidden md:block 2xl:hidden absolute top-0 right-0 z-[-1] blur-[1px]">
+        <Image
+          src={"/assets/leaf-1.webp"}
+          alt="bg"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[239px] coin-float"
+        />
+      </div>
+      
+      <div className="absolute top-96 2xl:top-24 left-32 2xl:-left-32 z-[-1] blur-[2px] transform md:rotate-45">
+        <Image
+          src={"/assets/chili-1.png"}
+          alt="bg"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[239px] coin-float"
+        />
+      </div>
+
+      <div className="absolute bottom-[1200px] sm:bottom-[900px] 2xl:bottom-44 right-32 2xl:-right-28 z-[-1] blur-[1px] transform rotate-[315deg]">
+        <Image
+          src={"/assets/brinjal-1.png"}
+          alt="bg"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[239px] coin-float"
+        />
+      </div>
+
+      <div className="hidden md:block 2xl:hidden absolute bottom-80 left-0 z-[-1] blur-[1px] transform rotate-180">
+        <Image
+          src={"/assets/leaf-1.webp"}
+          alt="bg"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-[239px] coin-float"
+        />
+      </div>
+      
+      
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-center mb-8 text-[#37fbb3]">
           Plant Disease Recognition System
@@ -76,7 +122,7 @@ export default function HomePage() {
               <Button
                 className="bg-[#37fbb3] hover:bg-[#2de29e] text-[#020817]"
                 size="lg"
-                onClick={()=>push("/disease")}
+                onClick={() => push("/disease")}
               >
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

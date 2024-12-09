@@ -1,11 +1,9 @@
-// import { auth } from "@/auth";
 import TableSection from "@/components/admin/TableSection";
 import React from "react";
 
-const AdminPage = async () => {
-//   const session = await auth();
+const AdminPage = () => {
   return (
-    <div className=" w-full my-16">
+    <div className=" w-full my-16 px-5 mb-56">
       <TableSection />
     </div>
   );
