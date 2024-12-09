@@ -7,7 +7,7 @@ import ProfileDropdown from "./ProfileDropdown";
 import Menus from "./Menus";
 import { usePathname } from "next/navigation";
 
-const Header: React.FC = () => {
+const Navbar = () => {
   const pathname = usePathname();
   return (
     <nav className="w-full">
@@ -41,4 +41,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Navbar;
