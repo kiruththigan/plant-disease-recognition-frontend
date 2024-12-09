@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     siteName: "Plant Disease Recognition System.",
     images: [
       {
-        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
+        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW",
         width: 800,
         height: 600,
         alt: "Plant Disease Recognition System",
       },
       {
-        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
+        url: "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW",
         width: 1800,
         height: 1600,
         alt: "Plant Disease Recognition System",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description:
       "Identify plant diseases quickly and get expert treatment advice.",
     images: [
-      "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
+      "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW",
     ],
   },
 };
