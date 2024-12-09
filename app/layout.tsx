@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
-import Header from "@/components/header/Header";
+import Header from "../components/header/Header";
 
 // "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW" //social 610kb
 // "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1" //social 800kb
