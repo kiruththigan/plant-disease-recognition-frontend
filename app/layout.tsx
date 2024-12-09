@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
-import Header from "@/components/header/Header";
+import Navbar from "@/components/header/Navbar";
 
 // "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmUuLGQUrukFr6rKWwNn7aQCinxvP7LHecHSf6YEyWgzvW" //social 610kb
 // "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1" //social 800kb
@@ -58,7 +58,9 @@ export const metadata: Metadata = {
     title: "Plant Disease Recognition System",
     description:
       "Identify plant diseases quickly and get expert treatment advice.",
-    images: ["https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1"],
+    images: [
+      "https://amaranth-sore-takin-769.mypinata.cloud/ipfs/QmVG7jUv8HrwfvHG5CwQ4yhYp1sHauYCfsQy9vKS7XATV1",
+    ],
   },
 };
 
@@ -82,7 +84,7 @@ export default async function RootLayout({
         >
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-screen flex flex-col justify-between items-center relative">
-              <Header />
+              <Navbar />
               <div className="w-full md:container">
                 {children}
                 <Toaster position="top-right" richColors />
