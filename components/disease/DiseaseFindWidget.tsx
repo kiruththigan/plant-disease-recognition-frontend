@@ -11,7 +11,7 @@ const DiseaseFindWidget = () => {
   const file = useImageStore((state) => state.file);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-start items-start gap-5">
+    <div className="flex flex-col lg:flex-row justify-start items-start gap-5 mb-40">
       <div className="space-y-8">
         {(!isCameraOpen || file) && <FileUploader />}
 

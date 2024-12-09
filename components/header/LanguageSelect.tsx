@@ -47,7 +47,7 @@ const LanguageSelect: React.FC = () => {
             <SelectItem value="ta" className="font-normal">
               {t("tamil")}
             </SelectItem>
-            <SelectItem value="sh" className="font-normal" disabled>
+            <SelectItem value="sh" className="font-normal">
               {t("sinhala")}
             </SelectItem>
           </SelectGroup>

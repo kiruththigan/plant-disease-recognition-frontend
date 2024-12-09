@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald, Exo_2 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/header";
+import Header from "@/components/header/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer/Footer";
 import { getLocale, getMessages } from "next-intl/server";
@@ -83,7 +83,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-screen flex flex-col justify-between items-center relative">
               <Header />
-              <div className="md:container">
+              <div className="w-full md:container">
                 {children}
                 <Toaster position="top-right" richColors />
               </div>
