@@ -84,9 +84,9 @@ const Chatbot = () => {
       model: "plant-care",
       messages: [...messages, userMessage],
       stream: false,
-      prompt:
-        disease &&
-        `User asking about ${disease} disease, its causes, symptoms, prevention, and treatment methods. Also, be prepared to answer follow-up questions about this disease and other plant care issues.`,
+    //   prompt:
+    //     disease &&
+    //     `User asking about ${disease} disease, its causes, symptoms, prevention, and treatment methods. Also, be prepared to answer follow-up questions about this disease and other plant care issues.`,
     };
     try {
       const response = await axios.post(OLLAMA_API_URL, data);
