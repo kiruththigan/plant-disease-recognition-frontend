@@ -11,61 +11,59 @@ import axios from "axios";
 import { useImageStore } from "@/stores/image.store";
 
 const Chatbot = () => {
-  const { isOpen, setIsOpen } = useChatbotStore();
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, setIsOpen, input, setInput, isLoading, setIsLoading } =
+    useChatbotStore();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { messages, addMessage, addInitialMessage } = useChatStore();
-  const { disease } = useImageStore();
 
-//   const handleSubmit1 = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     if (!input.trim()) return;
+  //   const handleSubmit1 = async (e: React.FormEvent) => {
+  //     e.preventDefault();
+  //     if (!input.trim()) return;
 
-//     const userMessage: Message = {
-//       id: Date.now().toString(),
-//       role: "user",
-//       content: input,
-//     };
-//     addMessage(userMessage);
-//     setInput("");
-//     setIsLoading(true);
+  //     const userMessage: Message = {
+  //       id: Date.now().toString(),
+  //       role: "user",
+  //       content: input,
+  //     };
+  //     addMessage(userMessage);
+  //     setInput("");
+  //     setIsLoading(true);
 
-//     try {
-//       const response = await fetch("/api/chat", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           model: "plant-care",
-//           messages: [...messages, userMessage],
-//           stream: false,
-//         }),
-//       });
+  //     try {
+  //       const response = await fetch("/api/chat", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           model: "plant-care",
+  //           messages: [...messages, userMessage],
+  //           stream: false,
+  //         }),
+  //       });
 
-//       if (!response.ok) {
-//         throw new Error("Failed to fetch response");
-//       }
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch response");
+  //       }
 
-//       const data = await response.json();
-//       const assistantMessage: Message = {
-//         id: (Date.now() + 1).toString(),
-//         role: "assistant",
-//         content: data.message,
-//       };
-//       addMessage(assistantMessage);
-//     } catch (error) {
-//       console.error("Error:", error);
-//       addMessage({
-//         id: (Date.now() + 1).toString(),
-//         role: "assistant",
-//         content: "Sorry, I encountered an error. Please try again.",
-//       });
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
+  //       const data = await response.json();
+  //       const assistantMessage: Message = {
+  //         id: (Date.now() + 1).toString(),
+  //         role: "assistant",
+  //         content: data.message,
+  //       };
+  //       addMessage(assistantMessage);
+  //     } catch (error) {
+  //       console.error("Error:", error);
+  //       addMessage({
+  //         id: (Date.now() + 1).toString(),
+  //         role: "assistant",
+  //         content: "Sorry, I encountered an error. Please try again.",
+  //       });
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,9 +82,9 @@ const Chatbot = () => {
       model: "plant-care",
       messages: [...messages, userMessage],
       stream: false,
-    //   prompt:
-    //     disease &&
-    //     `User asking about ${disease} disease, its causes, symptoms, prevention, and treatment methods. Also, be prepared to answer follow-up questions about this disease and other plant care issues.`,
+      //   prompt:
+      //     disease &&
+      //     `User asking about ${disease} disease, its causes, symptoms, prevention, and treatment methods. Also, be prepared to answer follow-up questions about this disease and other plant care issues.`,
     };
     try {
       const response = await axios.post(OLLAMA_API_URL, data);

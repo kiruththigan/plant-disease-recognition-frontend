@@ -1,16 +1,25 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 import { Message } from "ai";
 
 interface ChatbotStore {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  input: string;
+  setInput: (input: string) => void;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
 }
 
 export const useChatbotStore = create<ChatbotStore>()((set) => ({
   isOpen: false,
   setIsOpen: (isOpen) => set({ isOpen: isOpen }),
+  input: "",
+  setInput: (input) => set({ input: input }),
+  isLoading: false,
+  setIsLoading: (isLoading) => set({ isLoading: isLoading }),
 }));
+
 
 // chat histrory localstorage
 interface ChatState {
