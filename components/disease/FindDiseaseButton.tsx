@@ -4,6 +4,8 @@ import { Button } from "../ui/button";
 import { useImageStore } from "@/stores/image.store";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Message } from "ai";
+import { useChatStore } from "@/stores/chat.store";
 
 const FindDiseaseButton: React.FC = () => {
   const t = useTranslations("FindDisease");
@@ -16,7 +18,11 @@ const FindDiseaseButton: React.FC = () => {
   const setDisease = useImageStore((state) => state.setDisease);
   const setSolution = useImageStore((state) => state.setSolution);
 
+  const { addInitialMessage, addMessage, clearMessages } = useChatStore();
+
   const handleDisease = async () => {
+    clearMessages();
+    addInitialMessage();
     setIsLoadingDisease(true);
     try {
       const formData = new FormData();
@@ -32,6 +38,14 @@ const FindDiseaseButton: React.FC = () => {
       if (data?.success) {
         setDisease(data?.data?.prediction);
         setSolution(data?.solution);
+        const promt = `You are Plant Care AI Assistant, an expert in agriculture and plant diseases. A user has recently identified ${data?.data?.prediction} in their plant. Provide detailed information about this disease, its causes, symptoms, prevention, and treatment methods. Also, be prepared to answer follow-up questions about this disease and other plant care issues.`;
+        const systemMessage: Message = {
+          id: Date.now().toString(),
+          role: "system",
+          content: promt,
+        };
+
+        addMessage(systemMessage);
       }
     } catch (e: any) {
       console.log("Error while predict disease ", e);

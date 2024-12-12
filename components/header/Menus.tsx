@@ -23,6 +23,7 @@ const Menus = () => {
         <div className="hidden sm:flex justify-start items-center">
           {items.map((item) => (
             <div
+              key={item.path}
               className={`link-container text-sm font-medium p-2 rounded-sm`}
             >
               <Link
