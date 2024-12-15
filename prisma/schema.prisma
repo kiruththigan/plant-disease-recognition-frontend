@@ -15,7 +15,7 @@ datasource db {
 
 model PlantDisease {
   id        Int      @id @default(autoincrement())
-  disease   String   @db.VarChar(255)
+  disease   String   @db.VarChar(255) @unique
   en        String?
   ta        String?
   sh        String?
@@ -27,4 +27,12 @@ model User {
   id       String @id @default(cuid())
   username String @unique
   password String
+}
+
+model ChatHistory {
+    id         Int      @id @default(autoincrement())
+    userId     Int
+    messages   Json
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
 }
