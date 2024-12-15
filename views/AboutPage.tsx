@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowRight, Leaf, Microscope, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import socialImage from "/public/assets/social.png";
+import kirusanImage from "/public/assets/kirusan.jpg";
+import varakunanImage from "/public/assets/varakunan.jpg";
 
 export default function AboutPage() {
   return (
@@ -92,15 +94,15 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12">
               <ExpertProfile
                 name="Mr. Kirusan Sivathasan"
-                title="Agriculture Officer"
-                image="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/275254225_3112115949076457_4504472250636185963_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGEnbN8r9kFliPdYyh8zV8ZF0L1py1tDQEXQvWnLW0NAXZqgtpFBIo-mosJu9oa8pNA0hG0WKG5AtTET7yBs7ZY&_nc_ohc=_9p8Pmop27QQ7kNvgFaXgh9&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Ahniktd_Dyid6S_6x6dBDXu&oh=00_AYB8_BG7ABKGTouc2Buc-8kioL-Bj56jfu0WemIoXvMbkw&oe=675CB550"
-                description=""
+                title="Technical Assistant"
+                image={kirusanImage}
+                description="Department of Agriculture Northern Province"
               />
               <ExpertProfile
                 name="Mr. Varakunan Vaithilingam"
-                title="Agriculture Officer"
-                image="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/319634044_1553187041797060_8557406234711448977_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEY0SbvgwfaBWBqrV0VQN-MY2fJRtaHBKdjZ8lG1ocEp43ocEy3Zt9CeN77LOxt4jR6tPa0UJtQX8cxZFnY-GUU&_nc_ohc=OtogXusHbPYQ7kNvgFQVFIP&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=A1CX8pwlTI9CKARGXVJZz2L&oh=00_AYCa8hHUigBh5qZlB2C4C65iHV2v92hhfDZeywlyQwEk3w&oe=675CA9BA"
-                description=""
+                title="Technical Assistant"
+                image={varakunanImage}
+                description="Department of Agriculture Northern Province"
               />
             </div>
           </div>
@@ -156,7 +158,7 @@ function ExpertProfile({
 }: {
   name: string;
   title: string;
-  image: string;
+  image: string | StaticImageData;
   description: string;
 }) {
   return (

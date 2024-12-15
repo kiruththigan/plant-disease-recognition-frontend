@@ -77,7 +77,7 @@ const Chatbot = () => {
     addMessage(userMessage);
     setInput("");
     setIsLoading(true);
-    const OLLAMA_API_URL = "http://localhost:11434/api/chat";
+    const OLLAMA_API_URL = `${process.env.NEXT_PUBLIC_OLAMA_API_URL}/api/chat`;
     const data = {
       model: "plant-care",
       messages: [...messages, userMessage],
